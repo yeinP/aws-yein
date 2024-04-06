@@ -1,0 +1,82 @@
+.loginContainer{
+    width: 500px;
+    margin: auto;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+}
+
+.loginContainer tr{
+    height: 50px;
+}
+.loginContainer td{
+   width: 80px;
+}
+
+.loginContainer input{
+    border: 1px solid #b5b5b5;
+    width: 200px;
+    height: 20px;
+}
+
+.loginContainer button[type="submit"]{
+    float: right;
+}
+
+.UPcontainer{
+
+}
+
+.UPcontainer input[type="text"]{
+    width: 800px;
+    height: 20px;
+    border: 1px solid #a19b9b;
+    border-radius: 0.5rem;
+}
+
+.UPcontainer textarea{
+    width: 800px;
+    border: 1px solid #a19b9b;
+    border-radius: 0.5rem;
+}
+.RMcontainer textarea{
+    width: 800px;
+    border: 1px solid #a19b9b;
+    border-radius: 0.5rem;
+}
+
+.RMcontainer input[type="text"]{
+    width: 800px;
+    height: 20px;
+    border: 1px solid #a19b9b;
+    border-radius: 0.5rem;
+}
+
+.RMcontainer td{
+    width: 50px;
+}
+.RMcontainer .techUl li{
+    display: flex;
+
+}
+.RMcontainer .techUl span{
+    width: 100px;
+
+}
+
+.RMcontainer .roleUl .readonly{
+    width: 30px;
+
+}
+.RMcontainer #be li, .RMcontainer #fe li{
+    display: flex;
+
+}
+.RMcontainer #be button, .RMcontainer #fe button{
+
+    width: 50px;
+
+}
+
+

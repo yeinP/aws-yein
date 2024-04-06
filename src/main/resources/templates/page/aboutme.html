@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="UPcontainer">
+    <h2>AboutMe 수정</h2>
+    <form method="post" th:object="${aboutMe}"  th:action="@{'/modify/aboutme/' + ${aboutMe.id}}" enctype="multipart/form-data">
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text"  th:value="*{name}" name="name"></td>
+            </tr>
+            <tr>
+                <td>핸드폰번호</td>
+                <td><input type="text"  th:value="*{phone}" name="phone"></td>
+            </tr>
+            <tr>
+                <td>생일</td>
+                <td><input type="text"  th:value="*{birth}" name="birth"></td>
+            </tr>
+            <tr>
+                <td>메일</td>
+                <td><input type="text"  th:value="*{mail}" name="mail"></td>
+            </tr>
+            <tr>
+                <td>깃주소</td>
+                <td><input type="text"  th:value="*{git}" name="git"></td>
+            </tr>
+            <tr>
+                <td>블로그주소</td>
+                <td><input type="text"  th:value="*{blog}" name="blog"></td>
+            </tr>
+            <tr>
+                <td>포토폴리오</td>
+                <td><input type="file" id="file" name="file" required></td>
+            </tr>
+        </table>
+        <button type="submit">업로드</button>
+    </form>
+</div>
+</body>
+</html>

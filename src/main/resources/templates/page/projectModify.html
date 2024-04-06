@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/700/admin.css" rel="stylesheet" />
+</head>
+<body>
+<div class="UPcontainer">
+    <h2>Project 수정</h2>
+    <form  id="uploadForm" method="post" th:object="${project}"  th:action="@{'/modify/project/' + ${project.id}}" enctype="multipart/form-data">
+        <input type="hidden" th:value="*{id}" name="id">
+        <table>
+            <tr>
+                <td>제목</td>
+                <td><input type="text"  th:value="*{title}" name="title"></td>
+            </tr>
+            <tr>
+                <td>요약</td>
+                <td><input type="text" class="form-control"  th:value="*{sumup}" name="sumup" required></td>
+            </tr>
+            <tr>
+                <td>내용</td>
+                <td>
+                    <div>
+                    <button id="redButton">색 강조</button>
+                    <button id="boldButton">글씨 강조</button>
+                    </div>
+                    <textarea th:text="*{content}" id="content" name="content" rows="10" required></textarea></td>
+            </tr>
+            <tr>
+                <td>기능</td>
+                <td><input type="text" class="form-control"  th:value="*{function}" name="function" required></td>
+            </tr>
+            <tr>
+                <td>담당</td>
+                <td><input type="text" class="form-control"  th:value="*{role}" name="role" required></td>
+            </tr>
+            <tr>
+                <td>GitHub</td>
+                <td><input type="text" class="form-control" th:value="*{giturl}" name="giturl" required></td>
+            </tr>
+            <tr>
+                <td>Backend</td>
+                <td><input type="text" class="form-control" th:value="*{backend}" name="backend" required></td>
+            </tr>
+            <tr>
+                <td>Frontend</td>
+                <td><input type="text" class="form-control" th:value="*{frontend}" name="frontend" required></td>
+            </tr>
+            <tr>
+                <td>DB</td>
+                <td><input type="text" class="form-control" th:value="*{db}" name="db" required></td>
+            </tr>
+            <tr>
+                <td>IDE</td>
+                <td><input type="text" class="form-control" th:value="*{ide}" name="ide" required></td>
+            </tr>
+            <tr>
+                <td>Deployment</td>
+                <td> <input type="text" class="form-control" th:value="*{deployment}" name="deployment" required></td>
+            </tr>
+            <tr>
+                <td>새로운 이미지</td>
+                <td><input type="file" class="form-control" name="files" accept="image/*" required multiple></td>
+            </tr>
+        </table>
+        <button type="submit">업로드</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById("content").addEventListener("keydown", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            const textarea = event.target;
+            const cursorPos = textarea.selectionStart;
+            const textBeforeCursor = textarea.value.substring(0, cursorPos);
+            const textAfterCursor = textarea.value.substring(cursorPos);
+            textarea.value = textBeforeCursor + "<br>" + textAfterCursor;
+            textarea.setSelectionRange(cursorPos + 4, cursorPos + 4);
+        }
+    });
+
+    document.getElementById("redButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        const textarea = document.getElementById("content");
+        const cursorPos = textarea.selectionStart;
+        const textBeforeCursor = textarea.value.substring(0, cursorPos);
+        const textAfterCursor = textarea.value.substring(cursorPos);
+        textarea.value = textBeforeCursor + '<span class="Projects_red__r_DWh"></span>' + textAfterCursor;
+        textarea.focus();
+    });
+
+
+    document.getElementById("boldButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        const textarea = document.getElementById("content");
+        const cursorPos = textarea.selectionStart;
+        const textBeforeCursor = textarea.value.substring(0, cursorPos);
+        const textAfterCursor = textarea.value.substring(cursorPos);
+        textarea.value = textBeforeCursor + '<b></b>' + textAfterCursor;
+        textarea.setSelectionRange(cursorPos + 3, cursorPos + 3);
+        textarea.focus();
+    });
+
+
+    document.querySelectorAll('.delete-button').forEach(button => {
+        button.addEventListener('click', () => {
+            const trElement = button.closest('tr'); // 현재 버튼이 포함된 tr 요소 선택
+            if (trElement) {
+                trElement.remove(); // tr 요소 삭제
+            }
+        });
+    });
+
+</script>
+</body>
+</html>

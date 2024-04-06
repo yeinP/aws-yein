@@ -1,0 +1,437 @@
+@media screen and (min-width: 300px){
+    .skill{
+        margin: auto;
+        padding: 0 1rem 20rem;
+    }
+    .title::after {
+        content: "SKILL.";
+        position: absolute;
+        color: rgb(246, 244, 244);
+        top: -0.2rem;
+        left: -0.2rem;
+    }
+    .title{
+        width: 90%;
+        color: rgb(250, 216, 31);
+        position: relative;
+        font-size: 2rem;
+        font-weight: 900;
+    }
+
+    .ptitle::after {
+        content: "PROJECT.";
+        position: absolute;
+        color: rgb(246, 244, 244);
+        top: -0.2rem;
+        left: -0.2rem;
+    }
+    .ptitle{
+        width: 90%;
+        color: rgb(250, 216, 31);
+        position: relative;
+        font-size: 2rem;
+        font-weight: 900;
+        margin: 0 0 2rem 0;
+    }
+    .skillBox .strong{
+        width: 100%;
+        margin-top: 2rem;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+    .strong__skill {
+        border: 0.2rem solid white;
+        font-size: 0.8rem;
+        font-weight: 900;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        color: rgb(238, 238, 238);
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+    .sk_title{
+        color: #fffdfd;
+        font-size: 1.5rem;
+        font-weight: 900;
+        text-align: center;
+        margin: 0 0 2rem;
+    }
+    .project {
+        margin: auto;
+        padding: 0 1rem 5rem;
+        transition: background-color 0.5s ease;
+    }
+    .projectDetail{
+        margin-bottom: 2rem;
+        /*width: 1200px;*/
+        color: black;
+        margin:auto;
+        height: 100%;
+        background-color:rgb(246, 244, 244) ;
+        border-radius: 5rem;
+    }
+    .projectDetail::after {
+        position: absolute;
+        color: rgb(250, 216, 31);
+        top: -0.3rem;
+        left: -0.3rem;
+    }
+    .projectTitle{
+        text-align: center;
+        padding: 3rem 0 0 0;
+    }
+
+    .projectTitle span{
+        font-weight: 900;
+        font-weight: 900;
+        font-size: 1.5rem;
+    }
+
+    .team {
+        text-align: center;
+        font-size: 0.8rem;
+        font-weight: 400;
+        color: #5a5f65;
+    }
+    .pContent{
+        margin: 0 0 2rem 0;
+        /*display: flex;*/
+    }
+    .carousel-item{
+        width: 600px;
+        padding: 3rem;
+        overflow: hidden;
+    }
+    .carousel-inner{
+        width: 600px;
+    }
+    img{
+        width: 7.5rem;
+        height: 7.5rem;
+    }
+    .carousel-control-prev{
+        margin: 0 0 0 6rem;
+    }
+    .carousel-control-next{
+        margin: 0 6rem 0 0;
+    }
+
+    .pExplain{
+        margin: 3rem 1rem 3rem 1rem;
+        padding: 0 0 1rem 0;
+    }
+    .controls-wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+        font-size: 0.8rem;
+    }
+    .carousel-control-prev{
+        position: relative;
+    }
+
+    .Projects_red__r_DWh {
+        color: #ed3770;
+    }
+
+    .Projects_show-readme-btn__v1p__ {
+        display: table;
+        padding: 0.5rem 1rem;
+        background-color: #222;
+        border-radius: 0.25rem;
+        color: #fff;
+        cursor: pointer;
+    }
+    .Projects_main-description__JVRu1{
+        padding-bottom: 2rem;
+        margin: 0 0 2rem 0;
+        border-bottom: 1px solid #ccc;
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+    .Projects_description___gCV_ {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: row;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+    }
+    .Projects_label__OLO6p:before {
+        content: "✔️";
+        display: inline;
+        padding-right: 0.5rem;
+    }
+    .Projects_label__OLO6p {
+        display: inline-block;
+        vertical-align: top;
+        width: 8rem;
+        font-weight: 900;
+        font-size: 0.9rem;
+    }
+    .Projects_value__B9RY_ a{
+        font-size: 0.8rem;
+    }
+    .Projects_value__B9RY_ {
+        display: inline-block;
+        vertical-align: bottom;
+        width: calc(100% - 8.4rem);
+        font-weight: 400;
+        font-size: 0.8rem;
+    }
+
+    .pdf {
+         position: absolute;
+        top: 420px;
+        left: 225px;
+        background-color: rgb(238, 238, 238);
+        display: flex;
+        align-items: center;
+        background-color: #555554;
+        height: 30px;
+        width: 135px;
+        border-radius: 3rem;
+        justify-content: space-evenly;
+        color: aliceblue;
+        font-size: 0.8rem;
+        cursor: pointer;
+    }
+    .pdf span{
+        font-size: 0.8rem;
+        margin: 0.5rem 0 0.5rem 1rem;
+    }
+    .pdf i{
+        font-size:  0.8rem;
+        margin: 0.5rem 1rem 0.5rem 0;
+
+    }
+    .pdf:hover{
+        background-color: rgb(250, 216, 31);
+        color: #5a5f65;
+    }
+
+    .custom-cursor {
+        width: 20px; /* 커서의 너비 */
+        height: 20px; /* 커서의 높이 */
+        border: 2px solid #000; /* 테두리 스타일과 색상 */
+        border-radius: 50%; /* 원형 모양으로 만들기 위해 반지름 설정 */
+        position: absolute;
+        pointer-events: none; /* 커서가 마우스 이벤트를 가로채지 않도록 설정 */
+        z-index: 9999; /* 다른 요소 위에 표시되도록 설정 */
+    }
+    .skill1,.skill4, .skill5 {
+        margin-bottom: 2rem;
+    }
+    .carousel-item img{
+        width: 100%;
+        height: 10rem;
+    }
+}
+
+@media screen and (min-width: 400px){
+    .contact {
+        max-width: 400px;
+    }
+    .carousel-item {
+        padding: 2rem;
+
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 13rem;
+    }
+    .info {
+        width: 16rem;
+    }
+    a {
+        color: #258ddb;
+        font-size: 0.75rem;
+    }
+    .info .span2 {
+
+        font-size: 0.9rem;
+
+    }
+
+    .pdf {
+        left: 250px;
+    }
+    img {
+        width: 8rem;
+        height: 8rem;
+    }
+    .strong__skill{
+        font-size: 1rem;
+    }
+    .Projects_main-description__JVRu1 {
+
+        font-size: 1em;
+    }
+    .Projects_label__OLO6p{
+        font-size: 1rem;
+    }
+    .Projects_value__B9RY_, .Projects_value__B9RY_ a{
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (min-width: 800px){
+    .pdf {
+        top: 800px;
+        left: 1150px;
+        font-size: 20px;
+        height: 35px;
+        width: 190px;
+    }
+
+    a {
+        font-size: 1rem;
+        text-decoration: none;
+    }
+    .contact{
+        max-width: 1400px;
+        height: 857px;
+    }
+    img {
+        width: 100%;
+        height: 380px;
+    }
+    .info {
+        width: 40rem;
+        border-radius: 2.5rem;
+        padding: 4rem;
+        margin-left: 5rem;
+        box-sizing: border-box;
+        height: 30rem;
+        display: flex;
+        font-weight: 600;
+        letter-spacing: 0.1rem;
+        flex-direction: column;
+        -webkit-box-align: center;
+        align-items: flex-start;
+        -webkit-box-pack: center;
+        border: 0.5rem solid rgb(250, 216, 31);
+        justify-content: space-around;
+    }
+    .info .fa, .info .fa-solid, .info .fa-brands {
+        font-size: 30px;
+        color: #383d45;
+        margin: 0 3rem 0 0;
+    }
+    .info .span2 {
+        color: #383d45;
+        font-weight: 400;
+        font-size: 1rem;
+        font-family: Han Sans, sans-serif;
+        padding: 0 1rem 0 0;
+    }
+    .skill{
+        margin: auto;
+        padding: 0 12rem 20rem;
+    }
+    .title {
+        width: 90%;
+        color: rgb(250, 216, 31);
+        position: relative;
+        font-size: 5rem;
+        font-weight: 900;
+    }
+    .sk_title {
+        color: #fffdfd;
+        font-size: 30px;
+        font-weight: 900;
+        text-align: center;
+        margin: 0 0 2rem;
+    }
+    .title::after {
+        content: "SKILL.";
+        position: absolute;
+        color: rgb(246, 244, 244);
+        top: -0.3rem;
+        left: -0.3rem;
+    }
+    .strong__skill {
+        border: 0.2rem solid white;
+        font-size: 18px;
+        font-weight: 900;
+        padding: 0.5rem 1rem;
+        border-radius: 1rem;
+        color: rgb(238, 238, 238);
+        margin: 0 0 1rem 0;
+        text-align: center;
+    }
+    .skillBox .strong {
+        width: 100%;
+        margin-top: 2rem;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .project {
+        margin: auto;
+        padding: 0 12rem 5rem;
+        transition: background-color 0.5s ease;
+    }
+    .ptitle {
+        width: 90%;
+        color: rgb(250, 216, 31);
+        position: relative;
+        font-size: 5rem;
+        font-weight: 900;
+        margin: 0 0 2rem 0;
+    }
+    .ptitle::after {
+        content: "PROJECT.";
+        position: absolute;
+        color: rgb(246, 244, 244);
+        top: -0.3rem;
+        left: -0.3rem;
+    }
+    .projectDetail{
+        width: 1200px;
+        color: black;
+        margin: auto;
+        height: 100%;
+        background-color: rgb(246, 244, 244);
+        border-radius: 5rem;
+    }
+    .projectTitle span {
+        font-weight: 900;
+        font-size: 60px;
+    }
+
+    .team {
+        text-align: center;
+        font-size: 18px;
+        font-weight: 400;
+        color: #5a5f65;
+    }
+
+    .pContent {
+        margin: 0 0 2rem 0;
+        display: flex;
+    }
+
+    .carousel-inner {
+        position: relative;
+        width: 600px !important;
+        overflow: hidden;
+    }
+
+    .carousel-item {
+        width: 600px;
+        padding: 3rem;
+        overflow: hidden;
+    }
+    .carousel-item img {
+        width: 100%;
+        height: 380px;
+    }
+    .Projects_value__B9RY_, .Projects_value__B9RY_ a {
+        font-size: 1rem;
+    }
+
+
+}

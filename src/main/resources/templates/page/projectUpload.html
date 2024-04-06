@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <link href="/css/700/admin.css" rel="stylesheet" />
+</head>
+<body>
+<div class="UPcontainer">
+  <h2 class="mb-4">프로젝트 업로드</h2>
+  <form th:action="@{/upload/project}" method="POST" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>제목</td>
+        <td><input type="text" class="form-control" id="title" name="title" required></td>
+      </tr>
+      <tr>
+        <td>요약</td>
+        <td><input type="text" class="form-control" id="sumup" name="sumup" required></td>
+      </tr>
+      <tr>
+        <td>내용</td>
+        <td>
+          <div>
+          <button id="redButton">색 강조</button>
+          <button id="boldButton">글씨 강조</button>
+          </div>
+          <textarea class="form-control" id="content" name="content" rows="10" required></textarea></td>
+      </tr>
+      <tr>
+        <td>기능</td>
+        <td><input type="text" class="form-control" id="function" name="function" required></td>
+      </tr>
+      <tr>
+        <td>Role</td>
+        <td><input type="text" class="form-control" id="role" name="role" required></td>
+      </tr>
+      <tr>
+        <td>GitHub</td>
+        <td><input type="text" class="form-control" id="giturl" name="giturl" required></td>
+      </tr>
+      <tr>
+        <td>Backend</td>
+        <td><input type="text" class="form-control" id="backend" name="backend" required></td>
+      </tr>
+      <tr>
+        <td>Frontend</td>
+        <td><input type="text" class="form-control" id="frontend" name="frontend" required></td>
+      </tr>
+      <tr>
+        <td>DB</td>
+        <td><input type="text" class="form-control" id="db" name="db" required></td>
+      </tr>
+      <tr>
+        <td>IDE</td>
+        <td><input type="text" class="form-control" id="ide" name="ide" required></td>
+      </tr>
+      <tr>
+        <td>Deployment</td>
+        <td> <input type="text" class="form-control" id="deployment" name="deployment" required></td>
+      </tr>
+
+      <tr>
+        <td>Img</td>
+        <td><input type="file" class="form-control" id="files" name="files" accept="image/*" required multiple></td>
+      </tr>
+    </table>
+    <div style="display: none"></div>
+    <button type="submit">업로드</button>
+  </form>
+</div>
+
+<script type="text/javascript" src="js/project.js"></script>
+</body>
+</html>

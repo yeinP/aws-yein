@@ -1,0 +1,8 @@
+[33m2d8a577[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{0}: reset: moving to HEAD~1
+[33m28dccd7[m HEAD@{1}: commit: role남은
+[33m2d8a577[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m HEAD@{2}: commit: readme만 완료하면 됨
+[33m4a6531a[m HEAD@{3}: commit: readme만 완료하면 됨
+[33mecd1cd9[m HEAD@{4}: commit: readme만 완료하면 됨
+[33m5bb5fbe[m HEAD@{5}: commit: readme만 완료하면 됨
+[33mf64a1e6[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{6}: Branch: renamed refs/heads/master to refs/heads/main
+[33mf64a1e6[m[33m ([m[1;31morigin/main[m[33m)[m HEAD@{8}: commit (initial): first commit

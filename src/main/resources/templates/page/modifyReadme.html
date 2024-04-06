@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="/css/700/admin.css" rel="stylesheet" />
+</head>
+<body>
+<div class="RMcontainer">
+    <form  id="uploadForm" method="post" th:object="${readme}"  th:action="@{'/modify/readme/' + ${readme.id}}">
+        <input type="hidden" th:value="*{id}" name="id">
+        <table>
+            <tr>
+
+                <td><h2>제목</h2></td>
+                <td>
+                    <h2><input type="text" th:value="${readme.projecttitle}" name="projecttitle"></h2>
+                </td>
+                <td th:if="${#strings.isEmpty(readme.projecttitle)}">
+                    <input type="text" name="projecttitle">
+                </td>
+
+            </tr>
+            <tr>
+                <td>요약</td>
+                <td>
+                    <div>
+                        <button id="boldButton">글씨 강조</button>
+                    </div>
+                    <textarea class="form-control" rows="10" th:text="*{summary}" name="summary" required id="summary"></textarea></td>
+                <td th:if="${readme.projecttitle == null}">
+                    <input type="text" name="summary">
+                </td>
+            </tr>
+            <tr>
+                <td>기능</td>
+                <td>
+                    <ul id="mainfunction-list">
+                        <li th:if="${#lists.isEmpty(readme.mainfunction)}">
+                            <input type="text" name="mainfunction[0]" required>
+                            <button onclick="removeMFunction(this)">삭제</button>
+                        </li>
+                        <li th:each="mainFunc, stat : ${readme.mainfunction}">
+                            <input type="text" class="form-control" th:value="${mainFunc}" th:name="'mainfunction[' + ${stat.index} + ']'" required>
+                            <button onclick="removeMainFunction(event)">삭제</button>
+                        </li>
+                    </ul>
+                </td>
+                <td><button type="button" onclick="addMainFunctionInput()">추가</button></td>
+            </tr>
+
+            <tr>
+                <td>기술</td>
+                <td class="techUl">
+                    <ul th:if="${#lists.isEmpty(readme.tech)}">
+                        <li><span>backend</span><input type="text" name="tech" required></li>
+                        <li><span>frontend</span><input type="text" name="tech" required></li>
+                        <li> <span>db</span><input type="text" name="tech" required></li>
+                        <li><span>ide</span><input type="text" name="tech" required></li>
+                        <li> <span>deployment</span><input type="text" name="tech" required></li>
+                    </ul>
+                    <ul th:if="${not #lists.isEmpty(readme.tech)}" th:object="${readme}">
+                        <li> <span>backend</span><input type="text" class="form-control" th:value="*{tech[0]}" name="tech" required></li>
+                        <li><span>frontend</span><input type="text" class="form-control" th:value="*{tech[1]}" name="tech" required></li>
+                        <li><span>db</span><input type="text" class="form-control" th:value="*{tech[2]}" name="tech" required></li>
+                        <li><span>ide</span><input type="text" class="form-control" th:value="*{tech[3]}" name="tech" required></li>
+                        <li> <span>deployment</span><input type="text" class="form-control" th:value="*{tech[4]}" name="tech" required></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">역할be
+                    <button type="button" onclick="addrolebeInput()">추가</button></td>
+                <td>
+                    <ul id="rolebe-list">
+                        <li th:if="${#lists.isEmpty(readme.rolebe)}">
+                            <input type="text" name="rolebe[0]" id="rolebe-input" required >
+                            <button type="button" onclick="removebe(this)">삭제</button>
+                        </li>
+                        <li th:each="role, stat : ${readme.rolebe}">
+                            <input type="text" class="form-control" th:value="${role}" th:name="'rolebe[' + ${stat.index} + ']'" required>
+                            <button type="button" onclick="removebe(event)">삭제</button>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td style="vertical-align: top;">역할fe <button type="button" onclick="addrolefeInput()">추가</button></td>
+                <td>
+                    <ul id="rolefe-list">
+                        <li th:if="${#lists.isEmpty(readme.rolefe)}">
+                            <input type="text" name="rolefe[0]"  id="rolefe-input" required>
+                            <button type="button" onclick="removefe(this)">삭제</button>
+                        </li>
+                        <li th:each="role, stat : ${readme.rolefe}">
+                            <input type="text" class="form-control" th:value="${role}" th:name="'rolefe[' + ${stat.index} + ']'" required>
+                            <button type="button" onclick="removefe(event)">삭제</button>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+
+            <tr>
+                <td>리뷰</td>
+                <td><textarea class="form-control" rows="10" th:text="*{review}" name="review" id="review" required></textarea></td>
+            </tr>
+            <tr>
+                <td>코드</td>
+                <td><textarea class="form-control" rows="10"  th:text="*{code}" name="code" required></textarea></td>
+            </tr>
+
+        </table>
+        <button type="submit">업로드</button>
+    </form>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="/js/modify.js"></script>
+<script>
+
+    document.getElementById("boldButton").addEventListener("click", function(event) {
+        event.preventDefault();
+        const textarea = document.getElementById("summary");
+        const cursorPos = textarea.selectionStart;
+        const textBeforeCursor = textarea.value.substring(0, cursorPos);
+        const textAfterCursor = textarea.value.substring(cursorPos);
+        textarea.value = textBeforeCursor + '<b></b>' + textAfterCursor;
+        textarea.setSelectionRange(cursorPos + 3, cursorPos + 3);
+        textarea.focus();
+    });
+
+
+    document.getElementById("summary").addEventListener("keydown", function(event) {
+        const textarea = event.target;
+        if (textarea.tagName.toLowerCase() === 'textarea' && event.key === "Enter") {
+            event.preventDefault();
+            const cursorPos = textarea.selectionStart;
+            const textBeforeCursor = textarea.value.substring(0, cursorPos);
+            const textAfterCursor = textarea.value.substring(cursorPos);
+            textarea.value = textBeforeCursor + "<br>" + textAfterCursor;
+            textarea.setSelectionRange(cursorPos + 4, cursorPos + 4);
+        }
+    });
+
+    document.getElementById("review").addEventListener("keydown", function(event) {
+        const textarea = event.target;
+        if (textarea.tagName.toLowerCase() === 'textarea' && event.key === "Enter") {
+            event.preventDefault();
+            const cursorPos = textarea.selectionStart;
+            const textBeforeCursor = textarea.value.substring(0, cursorPos);
+            const textAfterCursor = textarea.value.substring(cursorPos);
+            textarea.value = textBeforeCursor + "<br>" + textAfterCursor;
+            textarea.setSelectionRange(cursorPos + 4, cursorPos + 4);
+        }
+    });
+    function removebe(button) {
+        var li = button.parentElement;
+        li.parentElement.removeChild(li);
+    }
+
+    function removefe(button) {
+        var li = button.parentElement;
+        li.parentElement.removeChild(li);
+    }
+
+    function addrolebeInput() {
+        var rolebelist = document.getElementById('rolebe-list');
+        var newIndex = rolebelist.children.length;
+
+
+        var newLi = document.createElement('li');
+        var newInput = document.createElement('input');
+        newInput.setAttribute('type', 'text');
+        newInput.setAttribute('class', 'form-control');
+        newInput.setAttribute('name', 'rolebe[' + newIndex + ']');
+        newInput.setAttribute('required', true);
+
+        newInput.value = '<span style="color:#f92605">(00%)</span>'
+
+        newLi.appendChild(newInput);
+
+        var removeButton = document.createElement('button');
+        removeButton.textContent = '삭제';
+        removeButton.setAttribute('type', 'button');
+        removeButton.setAttribute('onclick', 'removebe(this)');
+        newLi.appendChild(removeButton);
+
+        rolebelist.appendChild(newLi);
+    }
+    function addrolefeInput() {
+        var rolefelist = document.getElementById('rolefe-list');
+        var newIndex = rolefelist.children.length;
+
+        var newLi = document.createElement('li');
+
+
+        var newInput = document.createElement('input');
+        newInput.setAttribute('type', 'text');
+        newInput.setAttribute('class', 'form-control');
+        newInput.setAttribute('name', 'rolefe[' + newIndex + ']');
+        newInput.setAttribute('required', true);
+
+
+        newInput.value = '<span style="color:#f92605">(00%)</span>'
+
+        newLi.appendChild(newInput);
+
+        var removeButton = document.createElement('button');
+        removeButton.textContent = '삭제';
+        removeButton.setAttribute('type', 'button');
+        removeButton.setAttribute('onclick', 'removefe(this)');
+
+
+        newLi.appendChild(removeButton);
+
+
+        rolefelist.appendChild(newLi);
+    }
+
+    var spanElement = document.createElement("span");
+    spanElement.style.color = "#f92605";
+    spanElement.textContent = "(00%)";
+
+    document.getElementById("rolebe-input").value = spanElement.outerHTML;
+    document.getElementById("rolefe-input").value = spanElement.outerHTML;
+
+</script>
+</body>
+</html>
