@@ -276,7 +276,7 @@
                             <div class="Projects_main-description__JVRu1">
                                 <div th:utext="${project.content}"></div>
                                 <div class="Projects_show-readme-btn__v1p__" id="show-readmeBtn" th:data-project-title="${project.title}">자세히 보기 ▶ README</div>
-                                <div class="hiddenBtn">
+                                <div class="hiddenBtn" th:if="${userid != null}">
                                     <button type="button"><a th:href="@{'/upload/readme/' + ${project.title}}">readme 수정</a></button>
                                 </div>
                             </div>
