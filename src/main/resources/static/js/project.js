@@ -5,7 +5,7 @@ document.getElementById("content").addEventListener("keydown", function(event) {
         const cursorPos = textarea.selectionStart;
         const textBeforeCursor = textarea.value.substring(0, cursorPos);
         const textAfterCursor = textarea.value.substring(cursorPos);
-        textarea.value = textBeforeCursor + "<br>" + textAfterCursor;
+        textarea.value = textBeforeCursor + "<p></p>" + textAfterCursor;
         textarea.setSelectionRange(cursorPos + 4, cursorPos + 4);
     }
 });

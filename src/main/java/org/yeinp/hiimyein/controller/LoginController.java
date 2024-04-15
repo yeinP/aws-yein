@@ -19,7 +19,7 @@ public class LoginController {
 
     @GetMapping("/login")
     public String showLoginForm() {
-        return "/page/login";
+        return "page/login";
     }
     @PostMapping("/login")
     public String login(@RequestParam String userid, @RequestParam String password, HttpSession session, Model model) {
@@ -29,7 +29,7 @@ public class LoginController {
             return "redirect:/";
         } else {
             model.addAttribute("error", "Invalid username or password.");
-            return "/page/login";
+            return "page/login";
         }
     }
 

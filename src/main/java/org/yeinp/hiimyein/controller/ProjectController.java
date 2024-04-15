@@ -70,7 +70,7 @@ public class ProjectController {
     public String modifyProject(@PathVariable String projectid, Model model) {
         ProjectDto projectDto = projectService.getProjectById(projectid);
         model.addAttribute("project", projectDto);
-        return "/page/projectModify";
+        return "page/projectModify";
     }
 
     @PostMapping("/modify/project/{projectid}")

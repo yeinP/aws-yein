@@ -37,7 +37,7 @@ public class ReadmeController {
         ReadmeDto readme = readmeService.getReadMe(projectitle);
         model.addAttribute("readme", readme);
 
-        return "/page/modifyReadme";
+        return "page/modifyReadme";
     }
 
     @PostMapping("/modify/readme/{id}")

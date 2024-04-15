@@ -51,13 +51,13 @@ public class HomeController {
         model.addAttribute("documentSkill", skillService.listSkill("document"));
         model.addAttribute("project", projectService.getProjectList());
 
-        return "/page/home";
+        return "page/home";
     }
 
     @GetMapping("/modify/aboutme")
     public String modifyAboutMe(Model model){
         model.addAttribute("aboutMe", userService.getAboutMe("박예인"));
-        return "/page/aboutme";
+        return "page/aboutme";
     }
 
     @PostMapping("/modify/aboutme/{id}")
